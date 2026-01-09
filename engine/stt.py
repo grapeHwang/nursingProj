@@ -1,7 +1,5 @@
 import wave
 import pyaudio
-import os 
-import collections
 import webrtcvad
 from groq import Groq
 import numpy as np
@@ -30,12 +28,9 @@ class SpeechToText:
         is_recording = False
 
         rms_threshold = 30
-        max_silent_frames = int(1.5 / (self.chunk / self.rate))
+        max_silent_frames = int(0.5 / (self.chunk / self.rate))
         min_recording_frames = int(0.5 / (self.chunk / self.rate))
 
-        """for i in range(0, int(self.rate / self.chunk * 5)):
-            data = stream.read(self.chunk)
-            frames.append(data)"""
         
         while True:
             try : 

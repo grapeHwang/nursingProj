@@ -1,6 +1,6 @@
 # 1. API 키 및 설정 파일 (가장 중요!)
 .env
-config/setting.py  # 만약 여기에 직접 키를 적으셨다면 포함, .env만 쓰시면 제외 가능
+#config/setting.py  # 만약 여기에 직접 키를 적으셨다면 포함, .env만 쓰시면 제외 가능
 
 # 2. 파이썬 실행 관련 파일
 __pycache__/
@@ -23,3 +23,5 @@ response_audio.mp3
 
 # 5. 아나콘다/가상환경 관련
 .conda/
+
+ 260106.pptx

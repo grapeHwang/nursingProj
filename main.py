@@ -14,8 +14,8 @@ def main():
     
 
     try : 
-        while True:
-            user_text = stt.listen()
+        """while True:
+            user_text = stt.listen(device_index=2) #device index의 경우 하드웨어 설정마다 달라서.... 로직 수정할 가능성 있음
             
             if not user_text or user_text.strip() == "" :
                 continue
@@ -25,7 +25,17 @@ def main():
             child_response = brain.get_response(user_text)
             print(f"patient : {child_response}")
 
-            tts.speak(child_response)
+            tts.speak(child_response)"""
+        
+        while True:
+            user_text = stt.listen(device_index=2)
+            if not user_text: continue
+
+            print(f"user : {user_text}")
+            for sentence in brain.get_streaming_response(user_text):
+                if sentence.strip():
+                    print(f"patient : {sentence}")
+                    tts.speak(sentence)
     except KeyboardInterrupt:
         print(exit)
 

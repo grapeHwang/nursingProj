@@ -31,3 +31,21 @@ class TextToSpeech:
 
         stream(audio)
 
+    def speak_stream(self, text):
+        if not text : return 
+
+        audio_stream = self.client.generate(
+            text=text,
+            voice_id=self.voice_id,
+            model_id="eleven_multilingual_v2",
+            stream=True,
+            voice_settings ={
+                "stability" : 0.4,
+                "similarity_boost" : 0.7,
+                "style" : 0.2,
+                "use_speaker_boost" : True
+                }
+            )
+        
+        stream(audio_stream)
+
