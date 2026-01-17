@@ -15,7 +15,7 @@ env/
 *.mp3
 temp_recording.wav
 response_audio.mp3
-
+.git
 # 4. 운영체제 및 에디터 관련
 .DS_Store
 .vscode/
