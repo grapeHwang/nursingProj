@@ -23,7 +23,6 @@ wheels/
 # --- Google Cloud & Vertex AI 인증 관련 ---
 # 서비스 계정 키 파일 (JSON)이 노출되지 않도록 설정
 *.json
-!scenarios/*.json  # 단, 시나리오 폴더 내의 JSON은 제외하고 관리하고 싶을 때
 
 # --- IDE (VS Code, PyCharm) ---
 .vscode/
