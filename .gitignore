@@ -1,0 +1,30 @@
+# --- [인증 및 설정 파일 (절대 업로드 금지)] ---
+**/.env
+*.json
+# 만약 secrets 폴더 안에 키를 모아두셨다면:
+secrets/
+
+# --- [파이썬 관련] ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+build/
+dist/
+
+# --- [OS 및 도구 관련] ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.vscode/
+.idea/
+
+# --- [ADK 및 캐시 관련] ---
+.adk/
+*.log
