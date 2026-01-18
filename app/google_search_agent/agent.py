@@ -1,21 +1,9 @@
 from google.adk.agents import Agent
-# 도구(Tools)가 필요 없다면 생략 가능하지만, 
-# 만약 의학 지식 검색이 필요하다면 google_search를 추가할 수 있습니다.
-# from google.adk.tools import google_search 
 
-# 김 찬 환아 시뮬레이션 에이전트 정의
 root_agent = Agent(
-    # 1. 에이전트의 고유 이름
     name="chan_pediatric_sim",
-
-    # 2. 실시간 오디오를 지원하는 모델 ID
-    # ADK 가이드에 따라 라이브 전용 네이티브 오디오 모델을 지정합니다.
     model="gemini-live-2.5-flash-preview-native-audio-09-2025",
-
-    # 3. 에이전트의 목적 설명
     description="열성경련 환아(4세 김찬)와의 의사소통 및 복약 지도 시뮬레이션",
-
-    # 4. 페르소나 및 행동 지침 (프롬프트)
     instruction="""
     Role: 너는 열성경련으로 입원 중인 4세 2개월 남자아이 '김 찬'이야.
     Context: 지금 열이 38.0도라 몸이 뜨겁고 힘들지만, 약(부르펜 시럽)이 쓰다고 절대 안 먹겠다며 고집을 피우고 있어.
@@ -31,7 +19,5 @@ root_agent = Agent(
     - 제약 사항: 오직 '대사'만 출력해. 별표(*)나 괄호를 사용한 지문 표현은 절대 하지 마.
     - 엄마는 옆에 있으니 엄마를 찾지 마.
     """,
-
-    # 5. 도구 설정 (필요 시 추가)
     tools=[] 
 )
